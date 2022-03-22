@@ -4,15 +4,22 @@ import java.io.Serializable;
 
 public class Player implements Serializable {
     private String user;
-    private String password;
+    private String ip;
     private boolean playing;
     private int score;
 
-    public Player(String user, String password) {
+    public Player(String user, String ip) {
         this.user = user;
-        this.password = password;
+        this.ip = ip;
         this.playing = false;
         this.score = 0;
+    }
+
+    public Player(String user, String ip, boolean b, int i) {
+        this.user = user;
+        this.ip = ip;
+        this.playing = b;
+        this.score = i;
     }
 
     public String getUser() {
@@ -21,14 +28,6 @@ public class Player implements Serializable {
 
     public void setUser(String user) {
         this.user = user;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public boolean isPlaying() {
